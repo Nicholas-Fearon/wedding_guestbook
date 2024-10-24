@@ -5,6 +5,12 @@ import cors from "cors";
 import pg from "pg";
 import dotenv from "dotenv";
 
+const corsOptions = {
+  origin: "https://wedding-guestbook.onrender.com", // your frontend domain
+  methods: "GET,POST", // allowed methods
+  credentials: true, // allow credentials (if needed)
+};
+
 // setup the server
 const app = express();
 app.use(cors());
