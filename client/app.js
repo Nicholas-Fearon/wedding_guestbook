@@ -4,7 +4,9 @@ const container = document.getElementById("msgContainer");
 
 //gests messages and inserts on page
 const getMessages = async () => {
-  const res = await fetch("http://localhost:8080/message");
+  const res = await fetch(
+    "https://wedding-guestbook-server.onrender.com/message"
+  );
   const messages = await res.json();
 
   messages.forEach((msg) => {
@@ -26,15 +28,17 @@ const handleFormSubmit = async (e) => {
   const formData = new FormData(form);
   const formObj = Object.fromEntries(formData);
 
-  const res = await fetch("http://localhost:8080/message", {
-    method: "POST",
-    body: JSON.stringify(formObj),
-    headers: { "Content-Type": "application/json" },
-  });
+  const res = await fetch(
+    "https://wedding-guestbook-server.onrender.com/message",
+    {
+      method: "POST",
+      body: JSON.stringify(formObj),
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   const data = await res.json();
   console.log(data);
-  
 
   container.innerHTML = "";
   await getMessages();
