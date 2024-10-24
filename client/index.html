@@ -4,21 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wedding Guestbook</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script type="module" src="./app.js" defer></script>
+    <base href="/" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js" defer></script>
   </head>
   <body>
     <div id="main-container">
+      <h1>Wedding Guestbook</h1>
+      <form>
+        <input type="text" name="guest" placeholder="Your name" />
+        <textarea name="message" placeholder="Your message"></textarea>
+        <button>Send</button>
+      </form>
 
-    
-    <h1>Wedding Guestbook</h1>
-    <form>
-      <input type="text" name="guest" placeholder="Your name" />
-      <textarea name="message" placeholder="Your message"></textarea>
-      <button>Send</button>
-    </form>
-
-    <div id="msgContainer"></div>
-  </div>
+      <div id="msgContainer"></div>
+    </div>
   </body>
 </html>
