@@ -1,6 +1,8 @@
+//DOM nodes
 const form = document.querySelector("form");
 const container = document.getElementById("msgContainer");
 
+//gests messages and inserts on page
 const getMessages = async () => {
   const res = await fetch("http://localhost:8080/message");
   const messages = await res.json();

@@ -13,10 +13,12 @@ dotenv.config();
 
 const db = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
+//test endpoint works
 app.get("/", (req, res) => {
   res.send("Hello world!");
 });
 
+//endpoint to get messages
 app.get("/message", async function (req, res) {
   // select all of the guestbooks
   const result = await db.query("SELECT * FROM wedding_guestbook");
@@ -25,6 +27,7 @@ app.get("/message", async function (req, res) {
   res.json(guests);
 });
 
+//endpoint for posted messages
 app.post("/message", async (req, res) => {
   const guestName = req.body.guest;
   const guestMsg = req.body.message;
