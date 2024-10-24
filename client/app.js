@@ -40,7 +40,6 @@ const handleFormSubmit = async (e) => {
   const data = await res.json();
   console.log(data);
 
-  container.innerHTML = "";
   await getMessages();
 };
 
