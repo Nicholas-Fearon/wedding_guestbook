@@ -40,6 +40,6 @@ app.post("/message", async (req, res) => {
   res.json(result);
 });
 
-app.listen("/message", () => {
+app.listen(8080, () => {
   console.log(`Server is running on port 8080`);
 });
