@@ -40,6 +40,6 @@ app.post("/message", async (req, res) => {
   res.json(result);
 });
 
-app.listen(8080, () => {
+app.listen("https://wedding-guestbook-server.onrender.com", () => {
   console.log(`Server is running on port 8080`);
 });
