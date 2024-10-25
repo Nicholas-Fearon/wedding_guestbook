@@ -1,50 +1,137 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   box-sizing: border-box;
-  background-image: url(./assets/wedding-1846114_1280.jpg);
+  background-image: url(./assets/wolfsburg-castle-7059979_1920.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
-.main-container {
-  height: 100vh;
+#main-container {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  position: relative;
 }
 
 h1 {
+  margin: 0;
+  padding: 10px;
   font-family: cursive;
   font-weight: bolder;
-  margin: 20px;
+  font-size: 70px;
+  color: #d8b04a;
+  text-shadow: 3px 3px black;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 300px;
   width: 300px;
-  background-color: tomato;
+  background-color: goldenrod;
+  border-radius: 10px;
+  margin-top: 150px;
+  border: solid 2px black;
+}
+
+/ #msgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  height: 200px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+p {
+  max-width: 100%;
+  background-color: white;
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 5px;
 }
 
 input {
-  width: 250px;
-  margin: auto;
-  padding: 5px;
+  width: 270px;
+  margin: 15px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: solid 1px black;
 }
 
 textarea {
-  margin: auto;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 15px;
   height: 100px;
-  width: 250px;
+  width: 270px;
+  border-radius: 10px;
+  border: solid 1px black;
 }
 
 button {
   width: 80px;
-  margin: auto;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 8px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    background-image: url("./assets/flowers-7948554_1280.jpg");
+    background-attachment: fixed;
+  }
+  h1 {
+    margin: 0;
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 70px;
+    color: #d8b04a;
+    text-shadow: 3px 3px black;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  form {
+    height: 300px;
+    width: 300px;
+  }
+
+  input {
+    width: 270px;
+  }
+
+  textarea {
+    width: 270px;
+  }
+
+  button {
+    width: 80px;
+  }
 }

@@ -1,5 +1,7 @@
 //DOM nodes
 const form = document.querySelector("form");
+const nameInput = document.querySelector("input");
+const msgInput = document.querySelector("textarea");
 const container = document.getElementById("msgContainer");
 
 //gests messages and inserts on page
@@ -39,7 +41,9 @@ const handleFormSubmit = async (e) => {
 
   const data = await res.json();
   console.log(data);
-
+  nameInput.value = "";
+  msgInput.value = "";
+  container.innerHTML = "";
   await getMessages();
 };
 
