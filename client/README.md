@@ -1,8 +1,9 @@
 Instructions
 User Stories
 
-🎯 Confirm that your project is functional on multiple screen sizes using either media queries or dynamic CSS styling.
-
+- media query at 480px, background image changes.
+- implemented form validation whre post does not send if inputs are empty.
+  added try catch throws an error if and error occurs. also informs users to refresh page.
 
 Stretch User Stories
 🐿️ As a user, I want additional functionality on the form such as form validation so that I can have a more interactive experience when submitting my information.
