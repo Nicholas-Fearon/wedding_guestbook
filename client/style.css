@@ -52,7 +52,7 @@ form {
   border: solid 2px black;
 }
 
-/ #msgContainer {
+#msgContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
