@@ -3,15 +3,15 @@ User Stories
 
 - media query at 480px, background image changes.
 - implemented form validation whre post does not send if inputs are empty.
-  added try catch throws an error if and error occurs. also informs users to refresh page.
+- added try catch throws an error if and error occurs. also informs users to refresh page.
 
 Stretch User Stories
-🐿️ As a user, I want additional functionality on the form such as form validation so that I can have a more interactive experience when submitting my information.
+
 🐿️ As a user, I want the website to be visually impressive and user-friendly so that it provides a pleasant browsing experience.
 🐿️ As a user, I would like to be able to delete posts.
 🐿️ As a user, I would like to be able to like messages so I can show my appreciation to other users.
 Stretch Requirements
-🏹 Provide additional functionality on the form, for example, by adding form validation or other options.
+
 🏹 Style the page excellently, for example, by adding extra UX considerations or animations.
 🏹 Add a delete button to each message and a DELETE route in the server.
 🏹 Create an option for users to like others’ posts.

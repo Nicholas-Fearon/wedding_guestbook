@@ -96,6 +96,10 @@ textarea {
 #formValid {
   border: none;
   background-color: goldenrod;
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+  text-decoration: underline;
 }
 
 button {
