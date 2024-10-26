@@ -5,12 +5,6 @@ import cors from "cors";
 import pg from "pg";
 import dotenv from "dotenv";
 
-const corsOptions = {
-  origin: "https://wedding-guestbook.onrender.com", // your frontend domain
-  methods: "GET,POST", // allowed methods
-  credentials: true, // allow credentials (if needed)
-};
-
 // setup the server
 const app = express();
 app.use(cors());
@@ -44,6 +38,25 @@ app.post("/message", async (req, res) => {
   );
 
   res.json(result);
+});
+
+//endpoint to delete messages
+app.delete('/message/:id', async (req, res) => {
+  const messageId = req.params.id;
+
+  try {
+    // Execute SQL query to delete the message with the matching id
+    const result = await pool.query('DELETE FROM messages WHERE id = $1', [messageId]);
+
+    if (result.rowCount > 0) {
+      res.status(200).json({ success: true, message: 'Message deleted' });
+    } else {
+      res.status(404).json({ success: false, message: 'Message not found' });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
 });
 
 app.listen(8080, () => {
