@@ -16,7 +16,7 @@ const getMessages = async () => {
     console.log(messages);
     const guest = msg.guest;
     const message = msg.message;
-    const messageId = message.id;
+    const messageId = msg.id;
     //create p element
     const p = document.createElement("p");
     p.textContent = `${guest} wrote you a message. ${message}`;
