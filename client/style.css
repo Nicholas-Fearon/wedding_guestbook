@@ -65,13 +65,19 @@ form {
   margin-top: 20px;
 }
 
+#pContainer {
+  background-color: white;
+  margin: 5px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
 p {
   max-width: 100%;
   background-color: white;
   padding: 8px;
-  border-radius: 10px;
-  border: 2px solid black;
+  border-bottom: 1px solid black;
   margin: 5px;
+  margin-bottom: 8px;
 }
 
 input {
@@ -99,6 +105,26 @@ textarea {
   color: white;
   font-weight: bolder;
   font-size: larger;
+  text-decoration: underline;
+}
+
+#likeBtn {
+  margin-right: auto;
+}
+
+#deleteBtn:hover {
+  background-color: white;
+  border: solid 2px red;
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#likeBtn:hover {
+  background-color: blue;
+  border: solid 2px white;
+  color: white;
+  font-weight: bold;
   text-decoration: underline;
 }
 

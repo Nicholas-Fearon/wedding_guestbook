@@ -5,7 +5,7 @@ const msgInput = document.querySelector("textarea");
 const container = document.getElementById("msgContainer");
 const formValid = document.getElementById("formValid");
 
-//gests messages and inserts on page
+//gets messages and inserts on page
 const getMessages = async () => {
   const res = await fetch(
     "https://wedding-guestbook-server.onrender.com/message"
@@ -16,35 +16,45 @@ const getMessages = async () => {
     console.log(messages);
     const guest = msg.guest;
     const message = msg.message;
-    const messageId = msg.id;
+
+    //create div container for messages
+    const pContainer = document.createElement("div");
+    pContainer.id = "pContainer";
+
     //create p element
     const p = document.createElement("p");
     p.textContent = `${guest} wrote you a message. ${message}`;
 
+    //create like button
+    const likeBtn = document.createElement("button");
+    let count = 0;
+    likeBtn.textContent = `Like (${count})`;
+    likeBtn.id = "likeBtn";
+
+    likeBtn.onclick = async () => {
+      count++;
+      likeBtn.textContent = `Like (${count})`;
+    };
+
     // Create the delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
-    deleteBtn.onclick = async () => {
-      // Send DELETE request to server with messageId
-      const deleteRes = await fetch(
-        `https://wedding-guestbook-server.onrender.com/message/${messageId}`,
-        { method: "DELETE" }
-      );
+    deleteBtn.id = "deleteBtn";
 
-      if (deleteRes.ok) {
-        // Remove the p element if deletion is successful
-        p.remove();
-      } else {
-        console.error("Failed to delete message");
-        alert("Could not delete the message. Please try again.");
-      }
+    //remove p element from page (not server)
+    deleteBtn.onclick = async () => {
+      p.remove();
+      deleteBtn.remove();
     };
 
-    container.appendChild(p);
-    container.appendChild(deleteBtn);
+    pContainer.appendChild(p);
+    pContainer.appendChild(likeBtn);
+    pContainer.appendChild(deleteBtn);
+    container.appendChild(pContainer);
   });
 };
 
+// Function to handle form sumbit
 const handleFormSubmit = async (e) => {
   e.preventDefault();
 
@@ -76,6 +86,7 @@ const handleFormSubmit = async (e) => {
       nameInput.value = "";
       msgInput.value = "";
       formValid.textContent = "";
+
       // Clear and reload messages
       container.innerHTML = "";
       await getMessages();
